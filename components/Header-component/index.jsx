@@ -4,7 +4,7 @@ import React from "react";
 const HeaderComponent = () => {
   return (
     <div className="ts-row header">
-      <div className="column is-middle-aligned">
+      <div className="column is-middle-aligned logo">
         <Link href="">
           <a>LOGO</a>
         </Link>

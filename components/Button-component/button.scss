@@ -1,0 +1,40 @@
+.articleButtons {
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-right: 48px;
+  .draft {
+    background-color: $lightGray;
+    color: $sideNavBackgroundColor;
+    border: none;
+    &:hover {
+      background-color: $normalGray;
+      color: white;
+    }
+  }
+  .publish {
+    background-color: $sideNavBackgroundColor;
+    border: none;
+    &:hover {
+      background-color: #9dc4ff;
+      color: $sideNavBackgroundColor;
+    }
+  }
+}
+
+// 手機尺寸
+@media screen and (max-width: 768px) {
+  .articleButtons {
+    width: 500px;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+}
+
+// 平板尺寸
+@media screen and (max-width: 820px) and (min-width: 768px) {
+  .articleButtons {
+    width: 500px;
+    justify-content: flex-end;
+    margin-left: 57px;
+  }
+}

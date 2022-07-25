@@ -1,0 +1,71 @@
+.bookmark {
+  background-color: $lightGray;
+  border-radius: $borderRadius;
+  max-width: 906px;
+  padding: 0 !important;
+  gap: 0;
+  position: fixed;
+  flex-wrap: wrap;
+  z-index: 3;
+
+  .is-angles-down-icon {
+    display: none;
+  }
+  button {
+    background-color: $lightGray;
+    color: $sideNavBackgroundColor;
+    padding: 6px 32px;
+    border: none;
+
+    &:hover {
+      background-color: $sideNavBackgroundColor;
+      color: #e8e8e8;
+    }
+  }
+}
+
+// 手機尺寸
+@media screen and (max-width: 768px) {
+  .bookmark {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 33px;
+    overflow: hidden;
+
+    .is-angles-down-icon {
+      display: flex;
+      position: fixed;
+      right: 0;
+      top: 2px;
+      cursor: pointer;
+      transition: 0.6s;
+    }
+
+    > button {
+      margin: 0 auto;
+      border-radius: 0;
+    }
+  }
+
+  .showBookmark {
+    height: 300px;
+    overflow: auto;
+    .is-angles-down-icon {
+      transform: rotate(180deg) translateX(50%);
+      transition: 0.6s;
+    }
+  }
+  .hideBookmark {
+    transform: rotate(180deg) translateX(50%);
+    transition: 0.6s;
+  }
+}
+
+// 平板尺寸
+@media screen and (max-width: 820px) and (min-width: 768px) {
+  .bookmark {
+    width: 500px;
+    left: 26%;
+  }
+}
