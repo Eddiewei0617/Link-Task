@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import BookmarkComponent from "../../components/Bookmark-component";
 import ButtonComponent from "../../components/Button-component";
@@ -6,6 +7,7 @@ import HeaderComponent from "../../components/Header-component";
 import SideNavComponent from "../../components/SideNav-component";
 
 function Frame() {
+  const [sideNavshow, setSideNavShow] = React.useState(true);
   return (
     <>
       <Head>
@@ -33,9 +35,16 @@ function Frame() {
         {/* 內容 */}
         <div className="ts-grid is-relaxed " style={{ margin: "56px 0px" }}>
           <div className="cell column is-3-wide ts-app-sidebar">
-            <SideNavComponent></SideNavComponent>
+            <SideNavComponent
+              sideNavshow={sideNavshow}
+              setSideNavShow={setSideNavShow}
+            ></SideNavComponent>
           </div>
-          <div className="cell is-vertical column is-12-wide ">
+          <div
+            className={`cell is-vertical column is-12-wide ${
+              !sideNavshow && "contentBlock"
+            } `}
+          >
             <div className="cell bookMarkFrame">
               <BookmarkComponent></BookmarkComponent>
             </div>

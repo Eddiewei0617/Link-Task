@@ -1,4 +1,5 @@
 .sideBar {
+  height: 100%;
   position: fixed;
   background-color: $sideNavBackgroundColor;
   color: #e8e8e8;
@@ -54,21 +55,43 @@
   .sideBar {
     height: 30px;
     transition: 0.5s;
+    z-index: 5;
+    padding: 10px;
 
     div {
       display: none;
     }
-
     .is-angles-left-icon {
       display: none;
     }
     .is-bars-icon {
       display: flex;
-      position: absolute;
+      // position: absolute;
       top: 50%;
       left: 60%;
       transform: translate(-50%, -50%);
       font-size: 22px;
+    }
+  }
+
+  // 在手機版點選漢堡時，出現畫面
+  .modalShow {
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+
+    div {
+      justify-content: center;
+      display: block;
+      z-index: 6;
+    }
+    .topic {
+      border-bottom: 1px solid white;
+    }
+    .is-bars-icon {
+      position: absolute;
+      left: 1.5rem;
+      top: 1.25rem;
     }
   }
 }
