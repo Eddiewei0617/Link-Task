@@ -1,10 +1,13 @@
-import Link from "next/link";
 import React from "react";
 
-const ContentComponent = () => {
+const ContentComponent = ({ sideNavshow }) => {
   return (
     <>
-      <div className="bigContent ts-wrap is-vertical ">
+      <div
+        className={`contentBlock ${
+          !sideNavshow && "bigContent"
+        } ts-wrap is-vertical`}
+      >
         {/* 文章(副)標題-一般input */}
         <div className="ts-control">
           <div className="label">文章標題</div>

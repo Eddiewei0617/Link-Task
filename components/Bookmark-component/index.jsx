@@ -1,13 +1,18 @@
-import Link from "next/link";
 import React from "react";
 
-const BookmarkComponent = () => {
+const BookmarkComponent = ({ sideNavshow }) => {
   const [show, setShow] = React.useState(true);
+
+  // 用於手機版判斷頁籤列表是否出現
   const handleBookmarkShow = () => {
     setShow(!show);
   };
   return (
-    <div className={`bookmark ts-tab is-segmented ${!show && "showBookmark"}`}>
+    <div
+      className={`bookmark ${
+        !sideNavshow && "bigBookmark"
+      } ts-tab is-segmented ${!show && "showBookmark"}`}
+    >
       <button className="ts-button">頁籤1</button>
       <span
         className="ts-icon is-angles-down-icon"
@@ -16,7 +21,7 @@ const BookmarkComponent = () => {
         }}
       ></span>
       <button
-        className={`ts-button `}
+        className={`ts-button`}
         onClick={() => {
           handleBookmarkShow();
           console.log("頁籤2");

@@ -28,29 +28,34 @@ function Frame() {
 
       <div className="ts-box">
         {/* HEADER */}
-        <div className="cell bookmarkBackground">
+        <div className="cell">
           <HeaderComponent></HeaderComponent>
         </div>
 
         {/* 內容 */}
-        <div className="ts-grid is-relaxed " style={{ margin: "56px 0px" }}>
+        <div
+          className={`${sideNavshow && "ts-grid"} is-relaxed contentFrame`}
+          style={{ margin: "56px 0px" }}
+        >
+          {/* 側邊欄 */}
           <div className="cell column is-3-wide ts-app-sidebar">
             <SideNavComponent
               sideNavshow={sideNavshow}
               setSideNavShow={setSideNavShow}
             ></SideNavComponent>
           </div>
-          <div
-            className={`cell is-vertical column is-12-wide ${
-              !sideNavshow && "contentBlock"
-            } `}
-          >
-            <div className="cell bookMarkFrame">
-              <BookmarkComponent></BookmarkComponent>
+
+          {/* 內容大區塊 */}
+          <div className={`cell is-vertical column is-12-wide`}>
+            {/* 頁籤元件 */}
+            <div className={`cell `}>
+              <BookmarkComponent sideNavshow={sideNavshow}></BookmarkComponent>
             </div>
+            {/* 內容元件 */}
             <div className="cell">
-              <ContentComponent></ContentComponent>
+              <ContentComponent sideNavshow={sideNavshow}></ContentComponent>
             </div>
+            {/* 按鈕元件 */}
             <div className="cell ">
               <ButtonComponent></ButtonComponent>
             </div>
