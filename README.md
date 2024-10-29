@@ -5,5 +5,3 @@
 # apple
 
 # banana
-
-# cat
